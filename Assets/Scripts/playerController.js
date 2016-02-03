@@ -10,6 +10,9 @@ var angle : float;
 var mousePos : Vector3;
 var lookPos : Vector3;
 
+//Animation Variables
+var animator: Animator;
+
 
 function Start () {
 	posX = 0f;
@@ -17,6 +20,8 @@ function Start () {
 	angle = 0f;
 	mousePos = Input.mousePosition;
 	lookPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+	animator = gameObject.GetComponent(Animator);
 }
 
 //Functions for update assistance
@@ -33,6 +38,13 @@ function UpdatePosition() {
 }
 
 function Update () {
+
+	if(Input.GetMouseButtonDown(0)){
+		animator.SetBool("spiderBiting", true);
+	}
+	if(!(Input.GetMouseButtonDown(0))){
+		animator.SetBool("spiderBiting", false);
+	}
 
 	//Make a call to our update functions
 	UpdatePosition();
