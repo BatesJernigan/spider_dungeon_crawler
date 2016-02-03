@@ -38,13 +38,7 @@ function UpdatePosition() {
 }
 
 function Update () {
-
-	if(Input.GetMouseButtonDown(0)){
-		animator.SetBool("spiderBiting", true);
-	}
-	if(!(Input.GetMouseButtonDown(0))){
-		animator.SetBool("spiderBiting", false);
-	}
+	animator.SetBool('spiderBiting', Input.GetMouseButtonDown(0));
 
 	//Make a call to our update functions
 	UpdatePosition();
