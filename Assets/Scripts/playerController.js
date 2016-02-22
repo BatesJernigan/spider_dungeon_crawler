@@ -50,14 +50,12 @@ function ResetTransitions(){
 function Update () {
 
 	ResetTransitions();
-
-	if(Input.GetMouseButtonDown(0)){
-		animator.SetBool("spiderBiting", true);
-	}
+	
+	animator.SetBool('spiderBiting', Input.GetMouseButtonDown(0));
 	if(Input.GetAxis("Horizontal") || Input.GetAxis("Vertical")){
 		animator.SetBool("spiderMoving",true);
 	}
-
+	
 	//Make a call to our update functions
 	UpdatePosition();
 }
