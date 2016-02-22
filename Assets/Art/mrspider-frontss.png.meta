@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6330c75b126482646a2a21171767e11f
-timeCreated: 1454530456
+timeCreated: 1456178679
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,8 @@ TextureImporter:
     21300002: mrspider-frontss_1
     21300004: mrspider-frontss_2
     21300006: mrspider-frontss_3
+    21300008: mrspider-frontss_4
+    21300010: mrspider-frontss_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -33,7 +35,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -146,6 +148,41 @@ TextureImporter:
         - {x: 20, y: -30}
         - {x: 20, y: 25}
         - {x: 19, y: 30}
+    - name: mrspider-frontss_4
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 154
+        width: 40
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 28.5}
+        - {x: -20, y: 27.5}
+        - {x: -20, y: -23.5}
+        - {x: -15, y: -28.5}
+        - {x: 14, y: -28.5}
+        - {x: 20, y: -15.5}
+        - {x: 20, y: 21.5}
+        - {x: 11, y: 28.5}
+    - name: mrspider-frontss_5
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 73
+        width: 40
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 28.5}
+        - {x: -20, y: -18.5}
+        - {x: -18, y: -28.5}
+        - {x: 20, y: -28.5}
+        - {x: 20, y: 28.5}
     outline: []
   spritePackingTag: 
   userData: 
