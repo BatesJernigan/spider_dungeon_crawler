@@ -14,6 +14,9 @@ var lookPos : Vector3;
 //Animation Variables
 var animator: Animator;
 
+//Grab the rigidBody component
+var rgdbdy: Rigidbody2D;
+
 
 function Start () {
 	posX = 0f;
@@ -24,6 +27,11 @@ function Start () {
 	lookPos = Camera.main.ScreenToWorldPoint(mousePos);
 
 	animator = gameObject.GetComponent(Animator);
+
+	rgdbdy = gameObject.GetComponent(Rigidbody2D);
+
+	//Turn off gravity
+	rgdbdy.gravityScale = 0;
 }
 
 //Functions for update assistance
