@@ -81,6 +81,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 435212}
   - 212: {fileID: 21260672}
+  - 114: {fileID: 11465018}
   m_Layer: 0
   m_Name: room
   m_TagString: Untagged
@@ -276,6 +277,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.73, y: 0.63}
+--- !u!114 &11465018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbf6fff3f936534994f1b72115d6f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomID: 0
 --- !u!212 &21224812
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -360,7 +373,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -945468811
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b9d70a2a331850e43b75c2bc08912810, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -432,7 +445,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: -945468811
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181390}

@@ -16,7 +16,7 @@ TagManager:
   - 
   - background
   - 
-  - 
+  - portal
   - player
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: hidden
+    uniqueID: 3480595539
+    locked: 0
+  - name: background
+    uniqueID: 3349498485
+    locked: 0
+  - name: player
+    uniqueID: 2080791585
     locked: 0

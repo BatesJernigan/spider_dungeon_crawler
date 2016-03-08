@@ -127,6 +127,7 @@ MonoBehaviour:
   mousePos: {x: 0, y: 0, z: 0}
   lookPos: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
+  rgdbdy: {fileID: 0}
 --- !u!212 &21292044
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -181,7 +182,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2080791585
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6330c75b126482646a2a21171767e11f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -218,6 +219,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: moveSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 2080791585
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

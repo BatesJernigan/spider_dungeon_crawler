@@ -34,6 +34,19 @@ function Start () {
 	rgdbdy.gravityScale = 0;
 }
 
+//Here are our main collision functions
+function OnTriggerEnter2D(coll: Collider2D) {
+	if (coll.gameObject.layer == LayerMask.NameToLayer("portal")){
+		Debug.Log("touching");
+		//Move the camera to the new room
+		for (var room: GameObject in (GameObject.Find("Room Collection"))){
+			if (coll.gameObject.GetComponent(portalController).destinationRoom == room.GetComponent(roomController).roomID){
+				Camera.main.transform.position = room.transform.position;
+			}
+		}
+	}
+}
+
 //Functions for update assistance
 function UpdatePosition() {
 	posX = transform.position.x;
