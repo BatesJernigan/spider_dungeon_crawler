@@ -36,12 +36,22 @@ function Start () {
 
 //Here are our main collision functions
 function OnTriggerEnter2D(coll: Collider2D) {
+	//Collision with portal
 	if (coll.gameObject.layer == LayerMask.NameToLayer("portal")){
 		Debug.Log("touching");
 		//Move the camera to the new room
-		for (var room: GameObject in (GameObject.Find("Room Collection"))){
+		//We do this by grabbing the children of the Room collection, and checking each of their roomID.
+		//If we have a match, we move the camera to those coordinates.
+		var roomCollection = GameObject.Find("Room Collection").gameObject;
+		var numChildren = roomCollection.transform.childCount;
+		Debug.Log(numChildren);
+		for (var i : int = 0; i < numChildren; i++){
+			var room = roomCollection.transform.GetChild(i).gameObject;
 			if (coll.gameObject.GetComponent(portalController).destinationRoom == room.GetComponent(roomController).roomID){
-				Camera.main.transform.position = room.transform.position;
+				Camera.main.transform.position.x = room.transform.position.x;
+				Camera.main.transform.position.y = room.transform.position.y;
+				transform.position.x = room.transform.position.x;
+				transform.position.y = room.transform.position.y;
 			}
 		}
 	}
