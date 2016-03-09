@@ -39,7 +39,7 @@ function OnTriggerEnter2D(coll: Collider2D) {
 	//Collision with portal
 	if (coll.gameObject.layer == LayerMask.NameToLayer("portal")){
 		Debug.Log("touching");
-		//Move the camera to the new room
+		//Move the camera and player to the new room
 		//We do this by grabbing the children of the Room collection, and checking each of their roomID.
 		//If we have a match, we move the camera to those coordinates.
 		var roomCollection = GameObject.Find("Room Collection").gameObject;
@@ -50,8 +50,27 @@ function OnTriggerEnter2D(coll: Collider2D) {
 			if (coll.gameObject.GetComponent(portalController).destinationRoom == room.GetComponent(roomController).roomID){
 				Camera.main.transform.position.x = room.transform.position.x;
 				Camera.main.transform.position.y = room.transform.position.y;
-				transform.position.x = room.transform.position.x;
-				transform.position.y = room.transform.position.y;
+
+				//Move the player to the appropriate section of the room.
+				switch(coll.gameObject.GetComponent(portalController).portalDirection){
+					
+					case 0: //North
+						transform.position = room.GetComponent(roomController).bottomSpawn;
+						break;
+					case 1: //East
+						transform.position = room.GetComponent(roomController).leftSpawn;
+						break;
+					case 2: //South
+						transform.position = room.GetComponent(roomController).topSpawn;
+						break;
+					case 3: //West
+						transform.position = room.GetComponent(roomController).rightSpawn;
+						break;
+					default:
+						transform.position.x = room.transform.position.x;
+						transform.position.y = room.transform.position.y;
+						break;
+				}
 			}
 		}
 	}
