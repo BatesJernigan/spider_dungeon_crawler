@@ -11,6 +11,10 @@ var moveSpeed : float;
 var mousePos : Vector3;
 var lookPos : Vector3;
 
+//Gameplay variables
+public var playerMaxHealth : int;
+public var playerCurrentHealth : int;
+
 //Animation Variables
 var animator: Animator;
 
@@ -25,6 +29,9 @@ function Start () {
 	moveSpeed = 1.5f;
 	mousePos = Input.mousePosition;
 	lookPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+	playerMaxHealth = 20;
+	playerCurrentHealth = 20;
 
 	animator = gameObject.GetComponent(Animator);
 
