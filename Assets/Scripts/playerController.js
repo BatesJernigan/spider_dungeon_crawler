@@ -10,6 +10,12 @@ var angle : float;
 var moveSpeed : float;
 var mousePos : Vector3;
 var lookPos : Vector3;
+var firePoint : Transform;
+var whatToHit : LayerMask;
+var timeToSpawnEffect : float;
+var effectSpawnRate : float = 10;
+var damage : int = 10;
+var webPrefab : Transform;
 
 //Gameplay variables
 public var playerMaxHealth : int;
@@ -36,10 +42,15 @@ function Start () {
 	animator = gameObject.GetComponent(Animator);
 
 	rgdbdy = gameObject.GetComponent(Rigidbody2D);
+  firePoint = transform.FindChild('arrow');
 
 	//Turn off gravity
 	rgdbdy.gravityScale = 0;
 }
+
+// function effect(directionToShoot : Vector2) {
+//   Instantiate (BulletTrailPrefab, directionToShoot, firePoint.rotation);
+// }
 
 //Here are our main collision functions
 function OnTriggerEnter2D(coll: Collider2D) {
@@ -108,11 +119,43 @@ function Update () {
 
 	ResetTransitions();
 	
-	animator.SetBool('spiderBiting', Input.GetMouseButtonDown(0));
+	animator.SetBool('spiderBiting', Input.GetButtonDown('Fire1'));
 	if(Input.GetAxis("Horizontal") || Input.GetAxis("Vertical")){
 		animator.SetBool("spiderMoving",true);
 	}
 	
+
+  if (Input.GetButtonDown ("Fire1")) {
+    shoot();
+  }
 	//Make a call to our update functions
 	UpdatePosition();
+}
+
+function shoot () {
+
+  // var mousePosition : Vector2 = new Vector2(Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
+
+  print('mouse x: ' + lookPos.x);
+  print('mouse y: ' + lookPos.y);
+  var firePointPosition : Vector2 = Vector2(firePoint.position.x, firePoint.position.y);
+  var hit : RaycastHit2D = Physics2D.Raycast (firePointPosition, lookPos - firePointPosition, 100, whatToHit);
+  effect();
+  Debug.DrawLine (lookPos, firePointPosition, Color.cyan);
+  // if (Time.time >= timeToSpawnEffect) {
+  //   // effect(directionToShoot);
+  //   Debug.DrawLine (firePointPosition, mousePosition, Color.cyan);
+  //   timeToSpawnEffect = Time.time + 1/effectSpawnRate;
+  // }
+  // Debug.DrawLine (firePointPosition, mousePosition, Color.cyan);
+  if(hit.collider != null) {
+  //   Debug.DrawLine (firePointPosition, hit.point, Color.red);
+    Debug.Log ("We hit " + hit.collider.name + " and did " + damage + " damage");
+  //   // if(hit.collider.name == 'fly') {
+  //   //   hit.collider.GetComponent.<Fly>().DamageFly(damage);
+  //   // }
+  }
+}
+function effect() {
+  Instantiate(webPrefab, firePoint.position, firePoint.rotation);
 }
