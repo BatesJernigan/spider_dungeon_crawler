@@ -55,7 +55,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 054103d43cc05f7409d19b5dbca32650, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -76,6 +76,8 @@ MonoBehaviour:
   thePlayer: {fileID: 0}
   rotateSpeed: 0
   moveSpeed: 0
+  roomAssignment: 0
+  isActive: 0
   targetX: 0
   targetY: 0
 --- !u!212 &21214464
@@ -118,6 +120,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Name
       value: fly
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CullingMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

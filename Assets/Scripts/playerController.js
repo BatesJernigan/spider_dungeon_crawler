@@ -14,6 +14,7 @@ var lookPos : Vector3;
 //Gameplay variables
 public var playerMaxHealth : int;
 public var playerCurrentHealth : int;
+public var currentRoom : int;
 
 //Animation Variables
 var animator: Animator;
@@ -29,6 +30,7 @@ function Start () {
 	moveSpeed = 1.5f;
 	mousePos = Input.mousePosition;
 	lookPos = Camera.main.ScreenToWorldPoint(mousePos);
+	currentRoom = 1;
 
 	playerMaxHealth = 20;
 	playerCurrentHealth = 20;
@@ -57,6 +59,9 @@ function OnTriggerEnter2D(coll: Collider2D) {
 			if (coll.gameObject.GetComponent(portalController).destinationRoom == room.GetComponent(roomController).roomID){
 				Camera.main.transform.position.x = room.transform.position.x;
 				Camera.main.transform.position.y = room.transform.position.y;
+
+				//Change the player's currentRoom value
+				currentRoom = room.GetComponent(roomController).roomID;
 
 				//Move the player to the appropriate section of the room.
 				switch(coll.gameObject.GetComponent(portalController).portalDirection){
