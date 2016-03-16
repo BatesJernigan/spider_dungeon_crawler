@@ -52,6 +52,12 @@ function Start () {
 
 //Here are our main collision functions
 function OnTriggerEnter2D(coll: Collider2D) {
+	//Collision with enemy
+	if (coll.gameObject.layer == LayerMask.NameToLayer("enemy")){
+		playerCurrentHealth -= 1;
+		if (playerCurrentHealth < 0)
+			playerCurrentHealth = 0;
+	}
 	//Collision with portal
 	if (coll.gameObject.layer == LayerMask.NameToLayer("portal")){
 		Debug.Log("touching");
