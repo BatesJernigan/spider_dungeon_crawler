@@ -133,11 +133,6 @@ function Update () {
 }
 
 function shoot () {
-
-  // var mousePosition : Vector2 = new Vector2(Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y);
-
-  print('mouse x: ' + lookPos.x);
-  print('mouse y: ' + lookPos.y);
   var firePointPosition : Vector2 = Vector2(firePoint.position.x, firePoint.position.y);
   var hit : RaycastHit2D = Physics2D.Raycast (firePointPosition, lookPos - firePointPosition, 100, whatToHit);
   effect();
