@@ -10,6 +10,13 @@ var angle : float;
 var moveSpeed : float;
 var mousePos : Vector3;
 var lookPos : Vector3;
+var firePoint : Transform;
+var whatToHit : LayerMask;
+var timeToSpawnEffect : float;
+var effectSpawnRate : float = 10;
+var damage : int = 10;
+var webPrefab : Transform;
+var currentRoom : int;
 
 //Gameplay variables
 public var playerMaxHealth : int;
@@ -29,6 +36,7 @@ function Start () {
 	moveSpeed = 1.5f;
 	mousePos = Input.mousePosition;
 	lookPos = Camera.main.ScreenToWorldPoint(mousePos);
+  currentRoom = 1;
 
 	playerMaxHealth = 20;
 	playerCurrentHealth = 20;
@@ -36,6 +44,7 @@ function Start () {
 	animator = gameObject.GetComponent(Animator);
 
 	rgdbdy = gameObject.GetComponent(Rigidbody2D);
+  firePoint = transform.FindChild('arrow');
 
 	//Turn off gravity
 	rgdbdy.gravityScale = 0;
@@ -57,6 +66,9 @@ function OnTriggerEnter2D(coll: Collider2D) {
 			if (coll.gameObject.GetComponent(portalController).destinationRoom == room.GetComponent(roomController).roomID){
 				Camera.main.transform.position.x = room.transform.position.x;
 				Camera.main.transform.position.y = room.transform.position.y;
+
+        //Change the player's currentRoom value
+        currentRoom = room.GetComponent(roomController).roomID;
 
 				//Move the player to the appropriate section of the room.
 				switch(coll.gameObject.GetComponent(portalController).portalDirection){
@@ -108,11 +120,38 @@ function Update () {
 
 	ResetTransitions();
 	
-	animator.SetBool('spiderBiting', Input.GetMouseButtonDown(0));
+	animator.SetBool('spiderBiting', Input.GetButtonDown('Fire1'));
 	if(Input.GetAxis("Horizontal") || Input.GetAxis("Vertical")){
 		animator.SetBool("spiderMoving",true);
 	}
 	
+
+  if (Input.GetButtonDown ("Fire1")) {
+    shoot();
+  }
 	//Make a call to our update functions
 	UpdatePosition();
+}
+
+function shoot () {
+  var firePointPosition : Vector2 = Vector2(firePoint.position.x, firePoint.position.y);
+  var hit : RaycastHit2D = Physics2D.Raycast (firePointPosition, lookPos - firePointPosition, 100, whatToHit);
+  effect();
+  Debug.DrawLine (lookPos, firePointPosition, Color.cyan);
+  // if (Time.time >= timeToSpawnEffect) {
+  //   // effect(directionToShoot);
+  //   Debug.DrawLine (firePointPosition, mousePosition, Color.cyan);
+  //   timeToSpawnEffect = Time.time + 1/effectSpawnRate;
+  // }
+  // Debug.DrawLine (firePointPosition, mousePosition, Color.cyan);
+  if(hit.collider != null) {
+  //   Debug.DrawLine (firePointPosition, hit.point, Color.red);
+    Debug.Log ("We hit " + hit.collider.name + " and did " + damage + " damage");
+  //   // if(hit.collider.name == 'fly') {
+  //   //   hit.collider.GetComponent.<Fly>().DamageFly(damage);
+  //   // }
+  }
+}
+function effect() {
+  Instantiate(webPrefab, firePoint.position, firePoint.rotation);
 }

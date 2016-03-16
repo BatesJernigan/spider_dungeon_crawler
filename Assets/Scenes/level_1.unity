@@ -2399,6 +2399,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 11423348, guid: 93974931df112cf4084c63cd06df968f, type: 2}
+      propertyPath: roomAssignment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93974931df112cf4084c63cd06df968f, type: 2}
   m_IsPrefabParent: 0
@@ -3897,6 +3901,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11485042, guid: 479b7b16b5721d147b7ffb86f5590403, type: 2}
+      propertyPath: webPrefab
+      value: 
+      objectReference: {fileID: 474070, guid: 25dd024575e9944a08a713df9705401c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 479b7b16b5721d147b7ffb86f5590403, type: 2}
   m_IsPrefabParent: 0
@@ -5330,6 +5338,10 @@ Prefab:
     - target: {fileID: 124814, guid: 93974931df112cf4084c63cd06df968f, type: 2}
       propertyPath: m_Name
       value: fly 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423348, guid: 93974931df112cf4084c63cd06df968f, type: 2}
+      propertyPath: roomAssignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93974931df112cf4084c63cd06df968f, type: 2}
