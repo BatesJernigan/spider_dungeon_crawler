@@ -55,8 +55,10 @@ function OnTriggerEnter2D(coll: Collider2D) {
 	//Collision with enemy
 	if (coll.gameObject.layer == LayerMask.NameToLayer("enemy")){
 		playerCurrentHealth -= 1;
-		if (playerCurrentHealth < 0)
+		if (playerCurrentHealth <= 0){
 			playerCurrentHealth = 0;
+			SceneManagement.SceneManager.LoadScene('start_menu');
+		}
 	}
 	//Collision with portal
 	if (coll.gameObject.layer == LayerMask.NameToLayer("portal")){
