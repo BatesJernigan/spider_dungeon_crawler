@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: b27e638993a998845a63e0e659f35169
+timeCreated: 1461005354
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mrspider-sprites_9
+    21300002: mrspider-sprites_2
+    21300004: mrspider-sprites_5
+    21300006: mrspider-sprites_14
+    21300008: mrspider-sprites_8
+    21300010: mrspider-sprites_13
+    21300012: mrspider-sprites_1
+    21300014: mrspider-sprites_4
+    21300016: mrspider-sprites_7
+    21300018: mrspider-sprites_10
+    21300020: mrspider-sprites_14
+    21300022: mrspider-sprites_15
+    21300024: mrspider-sprites_17
+    21300026: mrspider-sprites_3
+    21300028: mrspider-sprites_6
+    21300030: mrspider-sprites_12
+    21300032: mrspider-sprites_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mrspider-sprites_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 307
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 33}
+        - {x: 7.5, y: 33}
+        - {x: 0.5, y: 27}
+        - {x: 0.5, y: 26}
+        - {x: 4.5, y: 32}
+        - {x: 4.5, y: 33}
+        - {x: -3.5, y: 33}
+        - {x: -9.5, y: 29}
+        - {x: -19.5, y: 22}
+        - {x: -19.5, y: -26}
+        - {x: -5.5, y: -33}
+        - {x: 19.5, y: -33}
+        - {x: 19.5, y: 24}
+        - {x: 16.5, y: 24}
+    - name: mrspider-sprites_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 311
+        width: 39
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.5, y: -23}
+        - {x: 2.5, y: -22}
+        - {x: 2.5, y: -23}
+        - {x: 3.5, y: -22}
+        - {x: 6.5, y: -25}
+        - {x: 15.5, y: -27}
+        - {x: 17.5, y: -24}
+        - {x: 19.5, y: -17}
+        - {x: 19.5, y: 29}
+        - {x: 16.5, y: 31}
+        - {x: 7.5, y: 31}
+        - {x: 0.5, y: 25}
+        - {x: 0.5, y: 24}
+        - {x: 4.5, y: 30}
+        - {x: 4.5, y: 31}
+        - {x: -7.5, y: 31}
+        - {x: -19.5, y: 23}
+        - {x: -19.5, y: -24}
+        - {x: -2.5, y: -31}
+        - {x: 12.5, y: -31}
+        - {x: 12.5, y: -30}
+        - {x: 10.5, y: -27}
+        - {x: 7.5, y: -26}
+    - name: mrspider-sprites_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 307
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 33}
+        - {x: 7.5, y: 33}
+        - {x: 0.5, y: 27}
+        - {x: 0.5, y: 26}
+        - {x: 4.5, y: 32}
+        - {x: 4.5, y: 33}
+        - {x: -3.5, y: 33}
+        - {x: -9.5, y: 29}
+        - {x: -19.5, y: 22}
+        - {x: -19.5, y: -26}
+        - {x: -5.5, y: -33}
+        - {x: 19.5, y: -33}
+        - {x: 19.5, y: 24}
+        - {x: 16.5, y: 24}
+    - name: mrspider-sprites_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 215
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 33}
+        - {x: 7.5, y: 33}
+        - {x: 0.5, y: 27}
+        - {x: 0.5, y: 26}
+        - {x: 4.5, y: 32}
+        - {x: 4.5, y: 33}
+        - {x: -3.5, y: 33}
+        - {x: -9.5, y: 29}
+        - {x: -19.5, y: 22}
+        - {x: -19.5, y: -26}
+        - {x: -5.5, y: -33}
+        - {x: 19.5, y: -33}
+        - {x: 19.5, y: 24}
+        - {x: 16.5, y: 24}
+    - name: mrspider-sprites_5
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 217
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 31}
+        - {x: -18.5, y: 17}
+        - {x: -18.5, y: -17}
+        - {x: -16.5, y: -21}
+        - {x: -6.5, y: -31}
+        - {x: 18.5, y: -31}
+        - {x: 18.5, y: 31}
+    - name: mrspider-sprites_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 215
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 33}
+        - {x: 7.5, y: 33}
+        - {x: 0.5, y: 27}
+        - {x: 0.5, y: 26}
+        - {x: 4.5, y: 32}
+        - {x: 4.5, y: 33}
+        - {x: -3.5, y: 33}
+        - {x: -9.5, y: 29}
+        - {x: -19.5, y: 22}
+        - {x: -19.5, y: -26}
+        - {x: -5.5, y: -33}
+        - {x: 19.5, y: -33}
+        - {x: 19.5, y: 24}
+        - {x: 16.5, y: 24}
+    - name: mrspider-sprites_14
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 253
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mrspider-sprites_13
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 237
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mrspider-sprites_12
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 226
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: mrspider-sprites_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 123
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 33}
+        - {x: 7.5, y: 33}
+        - {x: 0.5, y: 27}
+        - {x: 0.5, y: 26}
+        - {x: 4.5, y: 32}
+        - {x: 4.5, y: 33}
+        - {x: -3.5, y: 33}
+        - {x: -9.5, y: 29}
+        - {x: -19.5, y: 22}
+        - {x: -19.5, y: -26}
+        - {x: -5.5, y: -33}
+        - {x: 19.5, y: -33}
+        - {x: 19.5, y: 24}
+        - {x: 16.5, y: 24}
+    - name: mrspider-sprites_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 123
+        width: 39
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: 25}
+        - {x: 3.5, y: 22}
+        - {x: 7.5, y: 26}
+        - {x: 10.5, y: 27}
+        - {x: 12.5, y: 30}
+        - {x: 12.5, y: 31}
+        - {x: -11.5, y: 31}
+        - {x: -19.5, y: 21}
+        - {x: -19.5, y: -23}
+        - {x: -5.5, y: -31}
+        - {x: 16.5, y: -31}
+        - {x: 19.5, y: -27}
+        - {x: 19.5, y: 22}
+        - {x: 17.5, y: 30}
+    - name: mrspider-sprites_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 123
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 33}
+        - {x: 7.5, y: 33}
+        - {x: 0.5, y: 27}
+        - {x: 0.5, y: 26}
+        - {x: 4.5, y: 32}
+        - {x: 4.5, y: 33}
+        - {x: -3.5, y: 33}
+        - {x: -9.5, y: 29}
+        - {x: -19.5, y: 22}
+        - {x: -19.5, y: -26}
+        - {x: -5.5, y: -33}
+        - {x: 19.5, y: -33}
+        - {x: 19.5, y: 24}
+        - {x: 16.5, y: 24}
+    - name: mrspider-sprites_10
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 123
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 33}
+        - {x: 7.5, y: 33}
+        - {x: 0.5, y: 27}
+        - {x: 0.5, y: 26}
+        - {x: 4.5, y: 32}
+        - {x: 4.5, y: 33}
+        - {x: -3.5, y: 33}
+        - {x: -9.5, y: 29}
+        - {x: -19.5, y: 22}
+        - {x: -19.5, y: -26}
+        - {x: -5.5, y: -33}
+        - {x: 19.5, y: -33}
+        - {x: 19.5, y: 24}
+        - {x: 16.5, y: 24}
+    - name: mrspider-sprites_11
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 216
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
