@@ -1,7 +1,8 @@
 ﻿#pragma strict
 
 var speed : float;
-function Start () {
+function Update () {
+	print("mover transform z: " + transform.rotation.z);
 	var mesh = transform.FindChild('VFX');
 	mesh.GetComponent.<MeshRenderer>().sortingLayerName = 'player';
 	mesh.GetComponent.<MeshRenderer>().sortingOrder = 0;
