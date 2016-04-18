@@ -6,11 +6,3 @@ public var destinationRoom : int; //The roomID of the destination room
 enum Direction {North, East, South, West}
 
 public var portalDirection : Direction; //Which direction does the portal lead?
-
-function Start () {
-
-}
-
-function Update () {
-
-}
