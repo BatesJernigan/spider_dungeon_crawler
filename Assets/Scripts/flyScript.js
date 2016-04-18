@@ -20,8 +20,6 @@ function Update () {
   //Check if the player is in the room
   isActive = (thePlayer.GetComponent(playerController).currentRoom == roomAssignment);
 
-  print(isActive);
-
   if(isActive){
     //Targeting
     //if(targetX == null || targetY ==null){
@@ -30,7 +28,7 @@ function Update () {
     //}
 
     //Movement
-    transform.position = Vector3.MoveTowards(transform.position, new Vector3(targetX, targetY, -8), moveSpeed * Time.deltaTime);
+    transform.position = Vector2.MoveTowards(transform.position, new Vector2(targetX, targetY), moveSpeed * Time.deltaTime);
     //transform.RotateAround(new Vector3(targetX, targetY, -8), new Vector3(0, 0, 0), rotateSpeed * Time.deltaTime);
   }
 }

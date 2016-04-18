@@ -36,7 +36,7 @@ function Start () {
 	moveSpeed = 1.5f;
 	mousePos = Input.mousePosition;
 	lookPos = Camera.main.ScreenToWorldPoint(mousePos);
-  currentRoom = 1;
+  	currentRoom = 1;
 
 	playerMaxHealth = 20;
 	playerCurrentHealth = 20;
@@ -44,7 +44,7 @@ function Start () {
 	animator = gameObject.GetComponent(Animator);
 
 	rgdbdy = gameObject.GetComponent(Rigidbody2D);
-  firePoint = transform.FindChild('arrow');
+  	firePoint = transform.FindChild('arrow');
 
 	//Turn off gravity
 	rgdbdy.gravityScale = 0;
@@ -161,5 +161,7 @@ function shoot () {
   }
 }
 function effect() {
+  print("rotation: " + firePoint.rotation);
+  print("position: " + firePoint.position);
   Instantiate(webPrefab, firePoint.position, firePoint.rotation);
 }
