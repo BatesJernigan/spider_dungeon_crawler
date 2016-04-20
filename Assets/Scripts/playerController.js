@@ -33,13 +33,11 @@ function Start () {
 	posX = 0f;
 	posY = 0f;
 	angle = 0f;
-	moveSpeed = 1.5f;
 	mousePos = Input.mousePosition;
 	lookPos = Camera.main.ScreenToWorldPoint(mousePos);
   	currentRoom = 1;
 
-	playerMaxHealth = 20;
-	playerCurrentHealth = 20;
+	playerCurrentHealth = playerMaxHealth;
 
 	animator = gameObject.GetComponent(Animator);
 
@@ -143,25 +141,75 @@ function Update () {
 
 function shoot () {
   var firePointPosition : Vector2 = Vector2(firePoint.position.x, firePoint.position.y);
-  var hit : RaycastHit2D = Physics2D.Raycast (firePointPosition, lookPos - firePointPosition, 100, whatToHit);
+//  var hit : RaycastHit2D = Physics2D.Raycast (firePointPosition, lookPos - firePointPosition, 100, whatToHit);
   effect();
-  Debug.DrawLine (lookPos, firePointPosition, Color.cyan);
-  // if (Time.time >= timeToSpawnEffect) {
-  //   // effect(directionToShoot);
-  //   Debug.DrawLine (firePointPosition, mousePosition, Color.cyan);
-  //   timeToSpawnEffect = Time.time + 1/effectSpawnRate;
-  // }
-  // Debug.DrawLine (firePointPosition, mousePosition, Color.cyan);
-  if(hit.collider != null) {
-  //   Debug.DrawLine (firePointPosition, hit.point, Color.red);
-    Debug.Log ("We hit " + hit.collider.name + " and did " + damage + " damage");
-  //   // if(hit.collider.name == 'fly') {
+//  Debug.DrawLine (lookPos, firePointPosition, Color.cyan);
+//  if(hit.collider2d != null) {
+//    Debug.Log ("We hit " + hit.collider.name + " and did " + damage + " damage");
   //   //   hit.collider.GetComponent.<Fly>().DamageFly(damage);
-  //   // }
-  }
+  //   Debug.DrawLine (firePointPosition, hit.point, Color.red);
+//  }
 }
 function effect() {
-  print("rotation: " + firePoint.rotation);
-  print("position: " + firePoint.position);
   Instantiate(webPrefab, firePoint.position, firePoint.rotation);
+}
+
+function OnCollisionEnter2D(coll: Collision2D) {
+	damagePlayer(coll);
+}
+
+function OnCollisionStay2D(coll: Collision2D) {
+	damagePlayer(coll);
+}
+
+function damagePlayer(coll: Collision2D) {
+	//Collision with enemy
+	if (coll.gameObject.layer == LayerMask.NameToLayer("enemy")){
+		playerCurrentHealth--;
+		if (playerCurrentHealth <= 0){
+			playerCurrentHealth = 0;
+			SceneManagement.SceneManager.LoadScene('start_menu');
+		}
+	}
+
+	//Collision with portal
+	if (coll.gameObject.layer == LayerMask.NameToLayer("portal")){
+		//Move the camera and player to the new room
+		//We do this by grabbing the children of the Room collection, and checking each of their roomID.
+		//If we have a match, we move the camera to those coordinates.
+		var roomCollection = GameObject.Find("Room Collection").gameObject;
+		var numChildren = roomCollection.transform.childCount;
+		Debug.Log(numChildren);
+		for (var i : int = 0; i < numChildren; i++){
+			var room = roomCollection.transform.GetChild(i).gameObject;
+			if (coll.gameObject.GetComponent(portalController).destinationRoom == room.GetComponent(roomController).roomID){
+				Camera.main.transform.position.x = room.transform.position.x;
+				Camera.main.transform.position.y = room.transform.position.y;
+
+        //Change the player's currentRoom value
+        currentRoom = room.GetComponent(roomController).roomID;
+
+				//Move the player to the appropriate section of the room.
+				switch(coll.gameObject.GetComponent(portalController).portalDirection){
+					
+					case 0: //North
+						transform.position = room.GetComponent(roomController).bottomSpawn;
+						break;
+					case 1: //East
+						transform.position = room.GetComponent(roomController).leftSpawn;
+						break;
+					case 2: //South
+						transform.position = room.GetComponent(roomController).topSpawn;
+						break;
+					case 3: //West
+						transform.position = room.GetComponent(roomController).rightSpawn;
+						break;
+					default:
+						transform.position.x = room.transform.position.x;
+						transform.position.y = room.transform.position.y;
+						break;
+				}
+			}
+		}
+	}
 }

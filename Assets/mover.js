@@ -2,10 +2,20 @@
 
 var speed : float;
 function Update () {
-	print("mover transform z: " + transform.rotation.z);
 	var mesh = transform.FindChild('VFX');
 	mesh.GetComponent.<MeshRenderer>().sortingLayerName = 'player';
 	mesh.GetComponent.<MeshRenderer>().sortingOrder = 0;
-	GetComponent.<Rigidbody>().velocity = transform.right * speed;
+	GetComponent.<Rigidbody2D>().velocity = transform.right * speed;
 	Destroy (gameObject, 1);
+}
+
+function OnCollisionEnter2D (coll: Collision2D) {
+	switch(coll.gameObject.layer){
+		case LayerMask.NameToLayer("enemy"):
+		case LayerMask.NameToLayer("portal"):
+			Destroy(gameObject);
+			break;
+		default:
+			Destroy(gameObject, .25);
+	}
 }
