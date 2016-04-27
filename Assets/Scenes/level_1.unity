@@ -771,7 +771,6 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1034,6 +1033,14 @@ Prefab:
     - target: {fileID: 402862, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478858, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
+      propertyPath: destinationRoom
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478858, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
+      propertyPath: portalDirection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
@@ -1644,6 +1651,8 @@ GameObject:
   - 212: {fileID: 388853505}
   - 95: {fileID: 388853507}
   - 61: {fileID: 388853508}
+  - 114: {fileID: 388853510}
+  - 50: {fileID: 388853509}
   m_Layer: 14
   m_Name: dumby
   m_TagString: Untagged
@@ -1724,6 +1733,42 @@ BoxCollider2D:
   m_Offset: {x: 0.0040332135, y: 0.09635776}
   serializedVersion: 2
   m_Size: {x: 0.5163413, y: 0.60595345}
+--- !u!50 &388853509
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388853504}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!114 &388853510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388853504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcd1d7390856da4199606dbcdfae808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 0}
+  roomAssignment: 6
+  isActive: 0
+  targetX: 0
+  targetY: 0
+  enemyMaxHealth: 20
+  animator: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!4 &392063672 stripped
 Transform:
   m_PrefabParentObject: {fileID: 402862, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
@@ -2469,6 +2514,10 @@ Prefab:
       propertyPath: portalDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11478858, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
+      propertyPath: destinationRoom
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
   m_IsPrefabParent: 0
@@ -2518,6 +2567,10 @@ Prefab:
     - target: {fileID: 11478858, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
       propertyPath: destinationRoom
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478858, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
+      propertyPath: portalDirection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
@@ -2901,6 +2954,10 @@ Prefab:
       propertyPath: portalDirection
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11478858, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
+      propertyPath: destinationRoom
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
   m_IsPrefabParent: 0
@@ -3261,7 +3318,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1048334662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.6}
+  m_LocalPosition: {x: 0, y: 0, z: -2.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3543,6 +3600,10 @@ Prefab:
     - target: {fileID: 11478858, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
       propertyPath: destinationRoom
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478858, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
+      propertyPath: portalDirection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fac1e764a565c5647bd8d09998c94b54, type: 2}
