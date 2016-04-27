@@ -13,6 +13,7 @@ function OnCollisionEnter2D (coll: Collision2D) {
 	switch(coll.gameObject.layer){
 		case LayerMask.NameToLayer("enemy"):
 		case LayerMask.NameToLayer("portal"):
+//		case LayerMask.NameToLayer("Default"):
 			Destroy(gameObject);
 			break;
 		default:
