@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.309052, y: 8.370069, z: 0}
+  m_LocalPosition: {x: -5.1915646, y: 1.6823125, z: 0}
   m_LocalScale: {x: 0.53715825, y: 0.5371585, z: 0.5371585}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,7 +46,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5852152
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -58,9 +58,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.04, y: 0}
   serializedVersion: 2
-  m_Radius: 0.48
+  m_Radius: 0.3
 --- !u!212 &21227700
 SpriteRenderer:
   m_ObjectHideFlags: 1
