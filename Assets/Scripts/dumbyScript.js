@@ -32,7 +32,10 @@ function Update () {
     //}
 
     if (!IsInvoking("throwEgg")){
-     InvokeRepeating("throwEgg", 3, 3); //Repeat throwing action
+        InvokeRepeating("throwEgg", 3, 3); //Repeat throwing action
+    } else if (eggs.length > 3) {
+    	var temp : GameObject = eggs.Shift();
+    	Destroy(temp);
     }
   }
 
@@ -40,12 +43,11 @@ function Update () {
 
 function throwEgg(){
 	animator.Play("throwingAnim");
-	var newEgg : GameObject;
-	newEgg = Instantiate(Resources.Load("Egg"));
+	var newEgg : GameObject = Instantiate(Resources.Load("Egg"));
+	newEgg.GetComponent(Rigidbody2D).gravityScale = 0;
 	newEgg.transform.parent = transform.parent;
 	newEgg.transform.position = transform.position;
 	eggs.Push(newEgg);
-
 }
 
 function OnCollisionEnter2D(coll: Collision2D) {
