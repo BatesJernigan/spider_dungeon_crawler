@@ -172,6 +172,16 @@ function damagePlayer(coll: Collision2D) {
 		}
 	}
 
+	if (coll.gameObject.layer == LayerMask.NameToLayer("enemyProjectile")){
+		playerCurrentHealth-=20;
+		print("test");
+		Destroy(coll.gameObject);
+		if (playerCurrentHealth <= 0){
+			playerCurrentHealth = 0;
+			SceneManagement.SceneManager.LoadScene('start_menu');
+		}
+	}
+
 	//Collision with portal
 	if (coll.gameObject.layer == LayerMask.NameToLayer("portal")){
 		//Move the camera and player to the new room

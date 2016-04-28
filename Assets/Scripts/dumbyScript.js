@@ -6,6 +6,7 @@ public var isActive : boolean;
 var targetX : float;
 var targetY : float;
 var enemyMaxHealth : float;
+var eggSpeed : float;
 private var enemyCurrentHealth : float;
 var animator: Animator;
 var clip: AnimationClip;
@@ -25,17 +26,21 @@ function Update () {
   isActive = (thePlayer.GetComponent(playerController).currentRoom == roomAssignment);
 
   if(isActive){
-    //Targeting
-    //if(targetX == null || targetY ==null){
-    targetX = thePlayer.transform.position.x;
-    targetY = thePlayer.transform.position.y;
-    //}
 
     if (!IsInvoking("throwEgg")){
         InvokeRepeating("throwEgg", 3, 3); //Repeat throwing action
     } else if (eggs.length > 3) {
     	Destroy(eggs.Shift());
     }
+
+    for(var egg: GameObject in eggs){
+    	try{
+		egg.transform.position = Vector2.MoveTowards(egg.transform.position, new Vector2(targetX, targetY), eggSpeed * Time.deltaTime);
+		}
+		catch(e){
+			egg = null;
+		}
+	}
   }
 
 }
@@ -47,6 +52,8 @@ function throwEgg(){
 	newEgg.transform.parent = transform.parent;
 	newEgg.transform.position = transform.position;
 	eggs.Push(newEgg);
+	targetX = thePlayer.transform.position.x;
+    targetY = thePlayer.transform.position.y;
 }
 
 function OnCollisionEnter2D(coll: Collision2D) {
@@ -59,4 +66,5 @@ function OnCollisionEnter2D(coll: Collision2D) {
 			Destroy(gameObject);
 		}
 	}
+
 }

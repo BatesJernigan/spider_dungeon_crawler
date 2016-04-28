@@ -1767,6 +1767,7 @@ MonoBehaviour:
   targetX: 0
   targetY: 0
   enemyMaxHealth: 20
+  eggSpeed: 3
   animator: {fileID: 0}
   clip: {fileID: 0}
 --- !u!4 &392063672 stripped
@@ -3329,7 +3330,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1048334662}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb8525a46c270ac4ab35d1dfb75a79b6, type: 3}

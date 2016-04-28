@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21227700}
   - 50: {fileID: 5022538}
   - 58: {fileID: 5852152}
-  m_Layer: 0
+  - 114: {fileID: 11449722}
+  m_Layer: 15
   m_Name: Egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +47,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &5852152
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -61,6 +62,19 @@ CircleCollider2D:
   m_Offset: {x: -0.04, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &11449722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdce12b32259cf4aae77ae1b5cf3743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCurrentHealth: 0
+  thePlayer: {fileID: 0}
 --- !u!212 &21227700
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -109,6 +123,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: 2080791585
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
