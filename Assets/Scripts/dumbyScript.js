@@ -64,6 +64,7 @@ function OnCollisionEnter2D(coll: Collision2D) {
 		enemyCurrentHealth--;
 		if (enemyCurrentHealth <= 0){
 			Destroy(gameObject);
+			SceneManagement.SceneManager.LoadScene('level_2');
 		}
 	}
 
